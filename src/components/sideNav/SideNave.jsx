@@ -1,78 +1,42 @@
 import React from "react";
 import "./SideNav.css";
+import Image from "next/image";
+import img1 from "../../../public/sideNav/img1.png";
+import img2 from "../../../public/sideNav/img2.png";
+import img3 from "../../../public/sideNav/img3.png";
+import img4 from "../../../public/sideNav/img4.png";
+import img5 from "../../../public/sideNav/img5.png";
+import img6 from "../../../public/sideNav/img6.png";
+import img7 from "../../../public/sideNav/img7.png";
+import img8 from "../../../public/sideNav/img8.png";
+import img9 from "../../../public/sideNav/img9.png";
 
 const SideNave = () => {
+  const images = [img2, img3, img4, img5, img5, img6, img7, img8];
   return (
     <>
-      <div className="row-span-full hidden xl:block xl:z-[-1] 2xl:block 2xl:z-[-1] 3xl:block 3xl:z-[-16]">
-        <div
-          id="left-bar"
-          className="w-[100px] flex flex-col gap-y-5 fixed overflow-hidden"
-        >
-          <div className="bg-white rounded-3xl px-4 dark:bg-dark-bg lg:h-[calc(93vh)] xl:h-[94vh] 2xl:h-[93vh] 3xl:h-[93vh] scrl-left pb-16">
-            <div className="pt-7 mb-10 xl:mb-16 2xl:mb-16 3xl:mb-24 container cursor-pointer">
-              <img src="/sideNav/img1.png" alt="" />
+      <div className="w-[100px] flex flex-col justify-between bg-white rounded-3xl px-4 lg:h-[calc(93vh)] overflow-y-auto">
+        <Image
+          className="pt-[31px]"
+          src={img1}
+          alt="Dua_Logo"
+          width={71}
+          height={71}
+        />
+        <div className="flex flex-col items-center gap-[27px]">
+          {images.map((img, i) => (
+            <div key={i} className="p-[9px] rounded-full bg-[#E8F0F5]">
+              <Image src={img} alt="Your alt text" width={20} height={20} />
             </div>
-            <div className="justify-center items-center cursor-pointer my-2 flex flex-row w-full rounded-lg group">
-              <div className="w-1 rounded-tl-lg rounded-bl-lg "></div>
-              <div className="p-2 flex flex-row justify-center items-center">
-                <div className="bg-icon-bg dark:bg-dark-bg-dark bg-[#ebeef2] flex p-2 rounded-full items-center h-10 w-10 justify-center">
-                  <img src="/sideNav/img2.png" alt="" />
-                </div>
-              </div>
-            </div>
-            <div className="justify-center items-center  cursor-pointer my-2 flex flex-row w-full rounded-lg group">
-              <div className="w-1 rounded-tl-lg rounded-bl-lg "></div>
-              <div className="p-2 flex flex-row justify-center items-center">
-                <div className=" bg-icon-bg dark:bg-dark-bg-dark bg-[#ebeef2] flex p-2 rounded-full items-center h-10 w-10 justify-center">
-                  <img src="/sideNav/img3.png" alt="" />
-                </div>
-              </div>
-            </div>
-            <div className="justify-center items-center  cursor-pointer my-2 flex flex-row w-full rounded-lg group">
-              <div className="w-1 rounded-tl-lg rounded-bl-lg "></div>
-              <div className="p-2 flex flex-row justify-center  items-center">
-                <div className=" bg-icon-bg dark:bg-dark-bg-dark bg-[#ebeef2] flex p-2 rounded-full items-center h-10 w-10 justify-center">
-                  <img src="/sideNav/img4.png" alt="" />
-                </div>
-              </div>
-            </div>
-            <div className="justify-center items-center  cursor-pointer my-2 flex flex-row w-full rounded-lg group">
-              <div className="w-1 rounded-tl-lg rounded-bl-lg "></div>
-              <div className="p-2 flex flex-row justify-center items-center">
-                <div className=" bg-icon-bg dark:bg-dark-bg-dark bg-[#ebeef2] flex p-2 rounded-full items-center h-10 w-10 justify-center">
-                  <img src="/sideNav/img5.png" alt="" />
-                </div>
-              </div>
-            </div>
-            <div className="justify-center items-center  cursor-pointer my-2 flex flex-row w-full rounded-lg group">
-              <div className="w-1 rounded-tl-lg rounded-bl-lg "></div>
-              <div className="p-2 flex flex-row justify-center items-center">
-                <div className=" bg-icon-bg dark:bg-dark-bg-dark bg-[#ebeef2] flex p-2 rounded-full items-center h-10 w-10 justify-center">
-                  <img src="/sideNav/img6.png" alt="" />
-                </div>
-              </div>
-            </div>
-            <div className="justify-center items-center  cursor-pointer my-2 flex flex-row w-full rounded-lg group">
-              <div className="w-1 rounded-tl-lg rounded-bl-lg "></div>
-              <div className="p-2 flex flex-row justify-center items-center">
-                <div className=" bg-icon-bg dark:bg-dark-bg-dark bg-[#ebeef2] flex p-2 rounded-full items-center h-10 w-10 justify-center">
-                  <img src="/sideNav/img7.png" alt="" />
-                </div>
-              </div>
-            </div>
-            <div>
-              <div className="pt-6 xl:pt-16 2xl:pt-16 3xl:pt-24 pb-2 text-center">
-                <button className="w-13 h-13 bg-primary drop-shadow-primary rounded-lg text-white text-sm">
-                  <div className="flex justify-center items-center">
-                    <p className="hidden">I want To support</p>
-                    <img src="/sideNav/img9.png" alt="" />
-                  </div>
-                </button>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
+        <Image
+          className="pb-[31px]"
+          src={img9}
+          alt="Support"
+          width={150}
+          height={150}
+        />
       </div>
     </>
   );
