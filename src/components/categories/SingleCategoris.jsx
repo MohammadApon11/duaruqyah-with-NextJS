@@ -2,28 +2,30 @@
 import React, { useState } from "react";
 import getSubCategories from "@/hooks/getSubCategories";
 import SubCategories from "../subCategories/SubCategories";
+import { useCatId } from "@/provider/CatIdProvider";
 
-const SingleCategoris = ({ category, ...props }) => {
+const SingleCategoris = ({ category }) => {
+  const [isOpen, setIsOpen] = useState(false);
   const { cat_name_en, no_of_subcat, no_of_dua, cat_id } = category;
-  // console.log("category",category);
+  const { setCatId } = useCatId();
+  const handleOpen = () => {
+    setIsOpen(!isOpen);
+    setCatId(cat_id);
+  };
+
   const subCategories = getSubCategories();
 
   const filteredSubCategories = subCategories.filter(
     (c) => c.cat_id === cat_id
   );
-  // console.log("subCat",filteredSubCategories);
-
-  const [isOpen, setIsOpen] = useState(false);
-
-  const handleOpen = () => {
-    setIsOpen(!isOpen);
-  };
 
   return (
     <>
       <div
         onClick={handleOpen}
-        className={`w-[95%] mx-auto flex items-center justify-between gap-2 p-[10px] rounded-[10px] hover:bg-[#E8F0F5] cursor-pointer ${isOpen ? "bg-[#E8F0F5]" : ""}
+        className={`w-[95%] mx-auto flex items-center justify-between gap-2 p-[10px] rounded-[10px] hover:bg-[#E8F0F5] cursor-pointer ${
+          isOpen ? "bg-[#E8F0F5]" : ""
+        }
         `}
       >
         <div className="flex items-center gap-4">
@@ -47,6 +49,7 @@ const SingleCategoris = ({ category, ...props }) => {
           </div>
         </div>
       </div>
+
       <div className={`${isOpen ? "block" : "hidden"}`}>
         {filteredSubCategories.map((subCategories, index) => (
           <SubCategories

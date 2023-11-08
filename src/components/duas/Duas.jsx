@@ -1,6 +1,6 @@
 import React from "react";
 
-const Duas = ({ dua, isOpen }) => {
+const Duas = ({ dua }) => {
   const { dua_name_en } = dua;
   return (
     <>

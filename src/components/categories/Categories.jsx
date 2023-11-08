@@ -9,10 +9,10 @@ const Categories = () => {
 
   return (
     <>
-      <div className="bg-[#1FA45B] h-[57px] m-0 w-[350px] fixed flex items-center justify-center">
+      <div className="bg-[#1FA45B] h-[57px] m-0 w-[350px] fixed flex items-center justify-center rounded-md">
         <span className="text-white font-bold text-[17px]">Categories</span>
       </div>
-      <div>
+      <div className="fixed overflow-hidden w-[350px] mt-14">
         <div className="mx-3 pt-4">
           <div className="relative block w-full border-[1px] border-[#E8F0F5] rounded-md">
             <span className="absolute inset-y-0 left-0 flex items-center pl-4">
@@ -27,14 +27,16 @@ const Categories = () => {
             />
           </div>
         </div>
-        <div className="mt-4 scroll-mt-4 px-[15px]">
-          {categories.map((category, index) => (
-            <SingleCategoris
-              className="text-center"
-              key={index}
-              category={category}
-            />
-          ))}
+        <div className="h-[62vh] overflow-y-auto pb-8 mb-4">
+          <div className="mt-4 scroll-mt-4 px-[15px]">
+            {categories.map((category, index) => (
+              <SingleCategoris
+                className="text-center"
+                key={index}
+                category={category}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </>
