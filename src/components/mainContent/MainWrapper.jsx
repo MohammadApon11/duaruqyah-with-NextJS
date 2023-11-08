@@ -8,7 +8,7 @@ const MainWrapper = () => {
       <Header />
       <div className="flex justify-between gap-[33px]">
         {/* category section */}
-        <div className="bg-white w-[21%] h-[80vh] rounded-[10px] overflow-y-auto border-[0.5px] border-[#E2E2E2]">
+        <div className="bg-white fixed w-[350px] overflow-hidden h-[80vh] rounded-[10px] overflow-y-auto border-[0.5px] border-[#E2E2E2]">
           <Categories />
         </div>
         {/* dua show section */}
