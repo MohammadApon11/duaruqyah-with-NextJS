@@ -9,7 +9,7 @@ const SectionTitle = ({ subCategory }) => {
   return (
     <>
       <div className="flex undefined mb-5 flex-row bg-white rounded-[10px] px-5 py-4 justify-start items-center ">
-        <p className="font-medium leading-[25px] dark:text-dark-text text-ms">
+        <p className="font-medium leading-[25px]  text-ms">
           <span className="text-[#1FA45B]">Section:</span> {subcat_name_en}
         </p>
       </div>

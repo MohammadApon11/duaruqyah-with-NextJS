@@ -10,7 +10,7 @@ const Categories = () => {
   return (
     <>
       <div className="bg-[#1FA45B] h-[57px] m-0 w-[350px] fixed flex items-center justify-center rounded-md">
-        <span className="text-white font-bold text-[17px]">Categories</span>
+        <span className="text-white font-semibold text-[17px]">Categories</span>
       </div>
       <div className="fixed overflow-hidden w-[350px] mt-14">
         <div className="mx-3 pt-4">
@@ -22,7 +22,7 @@ const Categories = () => {
               name="category"
               type="text"
               className="h-12 placeholder:text-sm bg-white w-full rounded-md pl-12 shadow-sm focus:outline-none focus:ring-[#1FA45B] focus:ring-1  
-        sm:text-sm dark:border-none dark:placeholder:text-[#96a2b4]"
+        sm:text-sm dark:placeholder:text-[#96a2b4]"
               placeholder="Search by Categories"
             />
           </div>

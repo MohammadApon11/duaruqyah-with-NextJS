@@ -2,6 +2,7 @@ import React from "react";
 import Header from "../header/Header";
 import Categories from "../categories/Categories";
 import Dua from "../duas/Dua";
+import Settings from "../Settings/Settings";
 
 const MainWrapper = () => {
   return (
@@ -12,12 +13,12 @@ const MainWrapper = () => {
           <Categories />
         </div>
 
-        <div className="w-[890px] h-[100vh] overflow-y-auto">
+        <div className="w-[55%] h-[100vh] overflow-y-auto">
           <Dua />
         </div>
 
-        <div className="bg-white w-[17%] h-[80vh] rounded-lg overflow-y-auto border-[0.5px] border-[#E2E2E2]">
-          Settings
+        <div className="bg-white w-[20%] h-[80vh] rounded-[32px] overflow-y-auto border-[0.5px] border-[#E2E2E2]">
+          <Settings />
         </div>
       </div>
     </div>
