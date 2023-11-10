@@ -7,22 +7,32 @@ import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
 const SingleCategoris = ({ category }) => {
-  const { cat_name_en, no_of_subcat, no_of_dua, cat_id } = category;
-  const { catId, setCatId } = useCatId() || {};
-  const isOpen = cat_id === catId;
-  const handleOpen = () => {
-    setCatId(cat_id);
-  };
+  // Destructure values from the 'category' object
+const { cat_name_en, no_of_subcat, no_of_dua, cat_id } = category;
 
-  const subCategories = getSubCategories();
-  console.log("from sub categories", subCategories);
-  const filteredSubCategories = subCategories.filter(
-    (c) => c.cat_id === cat_id
-  );
+// Destructure values from the custom hook 'useCatId' or initialize an empty object
+const { catId, setCatId } = useCatId() || {};
+
+// Check if the current category is open based on the comparison of 'cat_id' and 'catId'
+const isOpen = cat_id === catId;
+
+// Define a function to handle opening the current category
+const handleOpen = () => {
+  setCatId(cat_id);
+};
+
+// Call the 'getSubCategories' function to retrieve subcategories
+const subCategories = getSubCategories();
+
+// Log subcategories to the console for debugging or informational purposes
+console.log("from sub categories", subCategories);
+
+// Filter subcategories based on the current category id ('cat_id')
+const filteredSubCategories = subCategories.filter((c) => c.cat_id === cat_id);
 
   return (
     <>
-      <a onClick={handleOpen} href={`#${cat_id}`}>
+      <a className="pt-2" onClick={handleOpen} href={`#${cat_id}`}>
         <div
           onClick={handleOpen}
           className={`mx-auto flex items-center justify-between gap-2 p-[10px] rounded-[10px] hover:bg-[#E8F0F5] cursor-pointer ${

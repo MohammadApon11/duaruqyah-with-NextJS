@@ -2,6 +2,7 @@ import React from "react";
 import { toast } from "react-hot-toast";
 
 const SingleDua = ({ dua, index }) => {
+  // destructure dua need property
   const {
     dua_name_en,
     dua_id,
@@ -15,7 +16,6 @@ const SingleDua = ({ dua, index }) => {
     translation_en,
     transliteration_en,
   } = dua || {};
-  console.log("from dua", dua);
   return (
     <div id={dua_id} className="bg-white rounded-[10px] mb-5">
       <div className="p-6">

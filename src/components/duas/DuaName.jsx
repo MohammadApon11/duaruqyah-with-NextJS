@@ -2,8 +2,13 @@ import { useCatId } from "@/provider/CatIdProvider";
 import React from "react";
 
 const DuaName = ({ dua }) => {
+  // Destructure values from the 'dua' object
   const { dua_name_en, dua_id } = dua;
+
+  // Destructure values from the custom hook 'useCatId' or initialize an empty object
   const { duaNameEn, setDuaNameEn } = useCatId();
+
+  // Check if the current dua is open based on the comparison of 'dua_name_en' and 'dunameEn.
   const isOpen = dua_name_en === duaNameEn;
   return (
     <>

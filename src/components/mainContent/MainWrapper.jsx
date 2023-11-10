@@ -12,7 +12,7 @@ const MainWrapper = ({ handleIsShow }) => {
         <Header handleIsShow={handleIsShow} />
       </div>
       <div className="col-span-6 mt-[27px] flex gap-[33px]">
-        <div className="w-[300px] bg-white overflow-hidden h-[80vh] rounded-[10px] overflow-y-auto border-[0.5px] p-0 border-[#E2E2E2]">
+        <div className="w-[310px] bg-white overflow-hidden h-[80vh] rounded-[10px] overflow-y-auto border-[0.5px] p-0 border-[#E2E2E2]">
           <Categories />
         </div>
 

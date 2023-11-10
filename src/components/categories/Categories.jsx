@@ -3,9 +3,11 @@ import React, { useState, useEffect } from "react";
 import SingleCategoris from "./SingleCategoris";
 
 const Categories = () => {
+  // State variables for categories and filter text
   const [categories, setCategories] = useState([]);
   const [filterText, setFilterText] = useState("");
 
+  // useEffect hook to fetch categories from the server when the component mounts
   useEffect(() => {
     fetch("/api/categories", {
       method: "GET",
@@ -19,14 +21,17 @@ const Categories = () => {
     });
   }, []);
 
+  // Event handler for handling changes in the search input
   const handleChange = (e) => {
     const inputText = e.target.value;
     setFilterText(inputText);
 
+    // Filter categories based on the input text
     const filteredCategory = categories.filter((category) =>
       category.cat_name_en.toLowerCase().includes(inputText.toLowerCase())
     );
 
+    // Update the categories state based on the filter
     if (inputText === "") {
       setCategories(categories);
     } else {
