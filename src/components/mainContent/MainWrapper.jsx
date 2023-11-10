@@ -1,8 +1,9 @@
 import Header from "../header/Header";
 import Categories from "../categories/Categories";
-import Dua from "../duas/Dua";
 import Settings from "../Settings/Settings";
 import "./MainWrapper.css";
+import Duas from "../duas/DuaName";
+import Dua from "../duas/Dua";
 
 const MainWrapper = ({ handleIsShow }) => {
   return (

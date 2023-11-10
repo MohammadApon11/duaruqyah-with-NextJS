@@ -5,11 +5,20 @@ const CatIdContext = createContext();
 
 export const CatIdProvider = ({ children }) => {
   const [catId, setCatId] = useState(1);
+  const [subCatId, setSubCatId] = useState(null);
+  const [duaNameEn, setDuaNameEn] = useState(null);
+
+  const values = {
+    catId,
+    setCatId,
+    subCatId,
+    setSubCatId,
+    duaNameEn,
+    setDuaNameEn,
+  };
 
   return (
-    <CatIdContext.Provider value={{ catId, setCatId }}>
-      {children}
-    </CatIdContext.Provider>
+    <CatIdContext.Provider value={values}>{children}</CatIdContext.Provider>
   );
 };
 

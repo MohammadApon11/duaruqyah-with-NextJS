@@ -1,9 +1,8 @@
-"use client";
 import getduas from "@/hooks/getDuas";
 import getSubCategories from "@/hooks/getSubCategories";
 import { useCatId } from "@/provider/CatIdProvider";
-import React, { useState } from "react";
-import SectionTitle from "./SectionTitle";
+import React from "react";
+import Duas from "./Duas";
 
 const Dua = () => {
   const { catId } = useCatId() || {};
@@ -15,14 +14,11 @@ const Dua = () => {
   return (
     <div
       className="w-full
-     pb-44 delay-1000 transition duration-1000 ease-linear"
+     pb-44"
     >
       <div className="">
         {filteredSubCategories.map((subCategory, index) => (
-          <SectionTitle
-            key={index}
-            subCategory={subCategory}
-          />
+          <Duas  key={index} subCategory={subCategory} />
         ))}
       </div>
     </div>

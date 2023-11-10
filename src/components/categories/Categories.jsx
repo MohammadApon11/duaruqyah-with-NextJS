@@ -1,14 +1,10 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import SingleCategoris from "./SingleCategoris";
-import getCategories from "@/hooks/getCategories";
-import { Link } from "react-scroll";
 
 const Categories = () => {
   const [categories, setCategories] = useState([]);
   const [filterText, setFilterText] = useState("");
-
-  console.log("from categores", categories);
 
   useEffect(() => {
     fetch("/api/categories", {
@@ -26,6 +22,7 @@ const Categories = () => {
   const handleChange = (e) => {
     const inputText = e.target.value;
     setFilterText(inputText);
+
     const filteredCategory = categories.filter((category) =>
       category.cat_name_en.toLowerCase().includes(inputText.toLowerCase())
     );
@@ -49,6 +46,7 @@ const Categories = () => {
               <img src="/header/search.png" alt="" />
             </span>
             <input
+              value={filterText}
               onChange={handleChange}
               name="category"
               type="text"
@@ -57,7 +55,7 @@ const Categories = () => {
             />
           </div>
         </div>
-        <div className="h-[62vh] overflow-y-auto mt-14 pb-8 mb-4">
+        <div className="h-[62vh] scroll-smooth overflow-y-auto mt-14 pb-8 mb-4">
           <div className="mt-4 px-2 scroll-mt-4">
             {categories?.map((category, index) => (
               <SingleCategoris

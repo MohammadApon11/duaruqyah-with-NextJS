@@ -1,18 +1,22 @@
+import getduas from "@/hooks/getDuas";
 import React from "react";
+import SingleDua from "./SingleDua";
 
-const Duas = ({ dua, cat_id }) => {
-  const { dua_name_en,dua_id } = dua;
+const Duas = ({ subCategory }) => {
+  const duas = getduas() || {};
+  const { subcat_name_en, subcat_id } = subCategory || {};
+  const filteredDuas = duas.filter((dua) => dua.subcat_id === subcat_id) || [];
   return (
     <>
-      <div className="mt-2 cursor-pointer">
-        <div className="flex flex-row ">
-          <img src="/duaarrow.svg" className="-translate-y-1 mr-2" alt="dua" />
-          <a href={`#${dua_id}`}>
-            <p className="my-3 text-left w-[95%] text-[.8125rem]">
-              {dua_name_en}
-            </p>
-          </a>
-        </div>
+      <div id={subcat_name_en} className="flex undefined mb-5 flex-row bg-white rounded-[10px] px-5 py-4 justify-start items-center ">
+        <p className="font-medium leading-[25px]  text-ms">
+          <span className="text-[#1FA45B]">Section:</span> {subcat_name_en}
+        </p>
+      </div>
+      <div>
+        {filteredDuas.map((dua, index) => (
+          <SingleDua key={index} index={index} dua={dua} />
+        ))}
       </div>
     </>
   );
