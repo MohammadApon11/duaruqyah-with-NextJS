@@ -14,11 +14,11 @@ const Home = () => {
   };
   return (
     <div>
-      <div className="px-10 pt-10 pb-0 grid grid-cols-12 fixed w-[100vw]">
-        <div className="grid-col-1">
+      <div className="px-10 pt-10 pb-0 flex gap-[33px] fixed w-[100vw]">
+        <div className="">
           <SideNave />
         </div>
-        <div className="col-span-11">
+        <div className="">
           <MainWrapper handleIsShow={handleIsShow} />
         </div>
         <div

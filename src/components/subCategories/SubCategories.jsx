@@ -3,7 +3,7 @@ import getduas from "@/hooks/getDuas";
 import React, { useState } from "react";
 import Duas from "../duas/duas";
 
-const SubCategories = ({ subCategories }) => {
+const SubCategories = ({ subCategories}) => {
   const { subcat_name_en, subcat_id } = subCategories;
   const duas = getduas();
 
@@ -12,7 +12,9 @@ const SubCategories = ({ subCategories }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="ml-12 border-l-2 border-dotted my-2 border-[#1FA45B]">
+    <div
+      className="ml-12 border-l-2 border-dotted my-2 border-[#1FA45B]"
+    >
       <div className="flex border-dotted flex-col justify-start items-start gap-y-2 ml-3 ">
         <div className="flex flex-row my-2">
           <div className="bg-[#1FA45B] -translate-x-4 mt-1.5 w-1.5 rounded-full h-1.5"></div>
