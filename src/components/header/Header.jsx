@@ -1,11 +1,10 @@
 import React from "react";
 import "./Header.css";
-import Image from "next/image";
 
-const Header = () => {
+const Header = ({ handleIsShow }) => {
   return (
     <>
-      <div className="flex w-[100%] justify-between h-[51px] mt-[20px]">
+      <div className="flex gap-8 w-[100%] justify-between h-[51px] mt-[20px]">
         <div className="flex justify-between w-[1351px]">
           <span className="text-[#393939] font-bold text-[24px]">Dua Page</span>
           <div className="relative w-[371px] h-[52px]">
@@ -20,8 +19,14 @@ const Header = () => {
           </div>
         </div>
         <div className="flex items-center gap-3">
-          <Image src="/header/profile.png" alt="" width={50} height={50} />
-          <Image src="/header/down-arrow.png" alt="" width={7} height={7} />
+          <img src="/header/profile.png" alt="" />
+          <img src="/header/down-arrow.png" alt="" />
+          <img
+            onClick={() => handleIsShow()}
+            className="setting_icon lg:hidden"
+            src="/header/settings.svg"
+            alt=""
+          />
         </div>
       </div>
     </>

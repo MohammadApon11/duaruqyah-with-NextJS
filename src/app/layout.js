@@ -12,7 +12,9 @@ export const metadata = {
 const RootLayout = ({ children }) => {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-[#ebeef2] relative`}>
+      <body
+        className={`${inter.className} bg-[#ebeef2] relative`}
+      >
         <CatIdProvider>{children}</CatIdProvider>
       </body>
     </html>

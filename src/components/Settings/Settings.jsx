@@ -1,6 +1,7 @@
 import React from "react";
+import { HiOutlineXMark } from "react-icons/hi";
 
-const Settings = () => {
+const Settings = ({ handleIsShow }) => {
   return (
     <>
       <div className="overflow-hidden w-full">
@@ -11,6 +12,13 @@ const Settings = () => {
           >
             <p className="text-center text-xl  xs:hidden sm:hidden">Settings</p>
           </div>
+          <span
+            onClick={() => handleIsShow()}
+            id="hide_for_lg"
+            className="text-[#1FA45B] text-[30px] mr-4 pt-[-20px] text-end font-bold"
+          >
+            ❎
+          </span>
           <div className="sm:pb-4 w-full">
             <div className="mx-3 my-4">
               <div className="border-x-devider border-x-1 border-b-1 rounded-lg dark:border-none ">

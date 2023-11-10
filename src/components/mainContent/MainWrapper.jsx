@@ -1,23 +1,28 @@
-import React from "react";
 import Header from "../header/Header";
 import Categories from "../categories/Categories";
 import Dua from "../duas/Dua";
 import Settings from "../Settings/Settings";
+import "./MainWrapper.css";
 
-const MainWrapper = () => {
+const MainWrapper = ({ handleIsShow }) => {
   return (
-    <div className="w-[100%] flex flex-col justify-between gap-[27px]">
-      <Header />
-      <div className="flex gap-[33px]">
-        <div className="bg-white w-[350px] overflow-hidden h-[80vh] rounded-[10px] overflow-y-auto border-[0.5px] border-[#E2E2E2]">
+    <div className="grid grid-cols-6">
+      <div className="col-span-6">
+        <Header handleIsShow={handleIsShow} />
+      </div>
+      <div className="col-span-6 mt-[27px] flex justify-between gap-[33px]">
+        <div className="w-[340px] bg-white overflow-hidden h-[80vh] rounded-[10px] overflow-y-auto border-[0.5px] p-0 border-[#E2E2E2]">
           <Categories />
         </div>
 
-        <div className="w-[55%] h-[100vh] overflow-y-auto">
+        <div className="h-[100vh] flex-1 overflow-y-auto">
           <Dua />
         </div>
 
-        <div className="bg-white w-[20%] h-[80vh] rounded-[32px] overflow-y-auto border-[0.5px] border-[#E2E2E2]">
+        <div
+          id="setting_1"
+          className="w-[227px] bg-white rounded-[32px] overflow-y-auto border-[0.5px] border-[rgb(226,226,226)]"
+        >
           <Settings />
         </div>
       </div>

@@ -14,7 +14,6 @@ const MainSingleDua = ({ dua, index }) => {
     translation_en,
     transliteration_en,
   } = dua || {};
-  console.log(dua);
   return (
     <div className="bg-white rounded-[10px] mb-5">
       <div className="p-6">
