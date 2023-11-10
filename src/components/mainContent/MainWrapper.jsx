@@ -15,7 +15,7 @@ const MainWrapper = ({ handleIsShow }) => {
           <Categories />
         </div>
 
-        <div className="h-[100vh] flex-1 overflow-y-auto">
+        <div className="h-[100vh] scroll-smooth flex-1 overflow-y-auto">
           <Dua />
         </div>
 

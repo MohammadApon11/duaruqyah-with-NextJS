@@ -53,18 +53,11 @@ const SingleCategoris = ({ category }) => {
 
       <div className={`${isOpen ? "block" : "hidden"}`}>
         {filteredSubCategories.map((subCategories, index) => (
-          <Link
-            to={subCategories.subcat_id}
-            smooth={true}
-            offset={-430}
-            duration={500}
-          >
-            <SubCategories
-              key={index}
-              subCategories={subCategories}
-              cat_id={cat_id}
-            />
-          </Link>
+          <SubCategories
+            key={index}
+            subCategories={subCategories}
+            cat_id={cat_id}
+          />
         ))}
       </div>
     </>
